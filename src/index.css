@@ -74,6 +74,12 @@ li{
   border-color: #495E57;
   box-shadow: #F4CE14;
 }
+.Reserve-btn:hover{
+  
+  background-color: #f0f0f0;
+  color: blue;
+  box-shadow: 3px 4px 13px #cececb;
+}
 .menu-section{
   display: flex;
   flex-wrap: wrap;
@@ -95,6 +101,12 @@ li{
   border-color: #495E57;
   box-shadow: #F4CE14;
 }
+.menu-btn:hover{
+  
+  background-color: #f0f0f0;
+  color: blue;
+  box-shadow: 3px 4px 13px #261ef7;
+}
 .card{
   margin: 5px;
   position: relative;
@@ -102,10 +114,12 @@ li{
   width: 264px;
   height: 439px;
   background-color: #f0f0f0;
+  border-radius: 10px;
 }
 .card img{
   width:264px;
   height: 185px;
+  border-radius: 10px;
 }
 .card h3{
   font-family: "Markazi Text";
@@ -137,14 +151,65 @@ li{
   width: 150px;
   height: 90px;
 }
+.form-component{
+  padding-left: 30%;
+  padding-top: 10%;
+}
+.background{
+  height:150%;
+  background-image: url("https://c0.wallpaperflare.com/preview/565/228/846/japanese-japan-restaurant-culture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form-container{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2,200px);
+  padding: 12px;
+  width: 500px;
+  background-color: rgba(93, 98, 240, 0.9);
+  
+}
+.label{
+  font-family: "karla";
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+.Book-btn{
+  margin-left: 220px;
+  width: fit-content;
+  height: 44px;
+  border-radius: 22px;
+  background-color: #2006cd;
+  font-family: 'Roboto';
+  color:rgb(255, 255, 255);
+  font-weight: bold;
+  border-color: none;
+}
+.Book-btn:hover{
+  color: blue;
+  background-color: white;
+  border:2px solid black;
+}
+.input{
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  border:2px solid #495E57;
+  font-weight: bold;
+}
+.input:hover{
+  border: 2px solid rgb(67, 195, 195);
+}
 @media screen and (max-width: 600px ) {
   .banner{
-    display: flexbox;
     height: 20vh;
     width:90% ;
     padding: 5%;
   }
   .nav{
+    width: 350px ;
     display:inline-flex;
    overflow: scroll;
   }
@@ -187,4 +252,24 @@ li{
     margin-left: 14%;
     height: 25px;
   }
+  .label{
+    font-size: 20px;
+  }
+  .form-component{
+    padding-left: 2%;
+    padding-top: 10%;
+    
+  }
+  .form-container{
+    display: grid;
+    grid-gap: 10px;
+  grid-template-columns: repeat(1,200px);
+  width: 250px;
+ 
+  }
+  .Book-btn{
+    margin-left: 0px;
+    border:2px solid black;
+  }
+  
 }
