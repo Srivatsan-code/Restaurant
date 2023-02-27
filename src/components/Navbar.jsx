@@ -12,24 +12,30 @@ const Navbar = () => {
     <img className='logo' src={logo} alt="logo" />
     <ul>
       <li>
-        <Link to='/'>Home</Link>
+        <Link className='Link' to='/'>Home</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link className='Link' to="/about">About</Link>
       </li>
-      <li>Menu</li>
       <li>
-        <Link to="/reservation">Reservation</Link>
+      <Link className='Link' to="/menu">Menu</Link>
       </li>
-      <li>Order Online</li>
-      <li>Login</li>
+      <li>
+        <Link className='Link' to="/reservation">Reservation</Link>
+      </li>
+      <li>
+      <Link className='Link' to="/onlineorder">Online Order</Link>
+      </li>
+      <li>
+      <Link className='Link' to="/Login">Login</Link>
+      </li>
     </ul>
     </nav>
     <Routes>
         <Route path='/' element={<HomePage/>} />
         <Route path='about' element={<About/>} />
         <Route path='reservation' element={<BookingPage/>}/>
-        <Route path='confirmation' element={<ConfirmedBooking/>}/>
+        <Route path='confirmation/:date/:time/' element={<ConfirmedBooking />}/>
     </Routes>
     </div>
   )

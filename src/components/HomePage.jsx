@@ -6,7 +6,7 @@ import card2 from "./assets/bruchetta.svg";
 import card3 from "./assets/lemon dessert.jpg";
 const HomePage = () => {
   return (
-    <div>
+    <div className='home-background'>
       <section>
           <article className='banner'>
           <h2 className='heading'>Little Lemon</h2>
@@ -17,7 +17,7 @@ const HomePage = () => {
           </article>
         </section>
         <section className='menu-section'>
-          <h3 className='heading2'>This week Specials</h3> 
+          <h3 className='heading2'>This week Specials !!!</h3> 
           <button className='menu-btn'>Online Menu</button>
           <div className='card'>
            <img src={card1} alt="dish1" />

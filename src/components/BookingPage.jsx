@@ -35,16 +35,19 @@ const BookingPage = () => {
     })
     );
     currentData.current=val;
-    console.log(currentData.current);
+   
     var submitApi=submitAPI(currentData.current);
     if(submitApi){
-      navigate("/confirmation")
+      navigate(`/confirmation/${date}/${time}`)
     }
     }
   
   return (
-    <section className='background'>
 
+    <main className='background'>
+      
+    <section >
+      
       <BookingForm 
       time={time} 
       dispatch={dispatch} 
@@ -58,7 +61,10 @@ const BookingPage = () => {
       setOccation={setOccation}
 
       />
+  
     </section>
+     
+     </main>
   )
 }
 
