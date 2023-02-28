@@ -2,7 +2,6 @@ import React from 'react'
 import banner from './assets/restauranfood.jpg';
 import card1 from './assets/greek salad.jpg';
 import bike from "./assets/bike.png";
-import card2 from "./assets/bruchetta.svg";
 import card3 from "./assets/lemon dessert.jpg";
 const HomePage = () => {
   return (
@@ -10,15 +9,20 @@ const HomePage = () => {
       <section>
           <article className='banner'>
           <h2 className='heading'>Little Lemon</h2>
+          <img className='bannerImage' src={banner} alt="banner"/>
           <h3 className='subheading'>Chicago</h3>
+        
           <p className='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <img className='bannerImage' src={banner} alt="banner Image"/>
+         
           <button className='Reserve-btn'>Reserve a Table</button>
+          
           </article>
         </section>
         <section className='menu-section'>
+          <article className='menu'>
           <h3 className='heading2'>This week Specials !!!</h3> 
           <button className='menu-btn'>Online Menu</button>
+          </article>
           <div className='card'>
            <img src={card1} alt="dish1" />
            <h3>Greek salad</h3>
@@ -28,7 +32,7 @@ const HomePage = () => {
            <img className='bike' src={bike} alt="bike icon"/>
           </div>
           <div className='card'>
-          <img src={card2} alt="dish1" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/2014_Bruschetta_The_Larder_Chiang_Mai.jpg" alt="dish1" />
            <h3>Bruchetta</h3>
            <h4>$ 5.99</h4>
            <p>Our Bruschetta is made from grilled bread that has been smeared with garlic.every last ingredient has been sourced and is as authentic as can be imagined. </p>

@@ -3,10 +3,15 @@
   border-radius: 10px;
   
 }
-.nav{
-  display:flex ;
-  height: 50px;
-
+.footer{
+  padding-top: 10px;
+  background-color: #495E57;
+  height: 200px;
+  text-align: center;
+  color: white;
+}
+span{
+  color:rgb(14, 246, 226);
 }
 .logo{
  
@@ -14,20 +19,26 @@
   width: 150px;
   
 }
+.nav{
+  background-color: #cececb;
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
 ul{
   display: inline-flex;
+  white-space: nowrap;
+  text-align: center;
  list-style: none; 
- margin:1% ;
+ padding:5px;
 }
-span{
-  color:rgb(14, 246, 226);
-}
+
 li{
- padding: 6px;
+ margin-right: 20px;
  font-weight: bolder;
  font-family: "karla";
 }
 .Link{
+  
   font-family: 'Roboto';
   text-decoration: none;
   color: #495E57;
@@ -41,14 +52,24 @@ li{
   padding: 5px;
   border-radius: 20px;
 }
+.click{
+  margin:auto;
+  text-decoration: none;
+  background-color: #495E57;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+}
 .container{
-  display: grid;
+ display: grid;
+ 
 }
 .banner{
+  display: grid;
   border-radius: 10px;
   background-color:#495E57;
-  height: 20vh;
-  width:90% ;
+  height: 24vh;
+
   padding: 5%;
 }
 .heading{
@@ -56,14 +77,14 @@ li{
   color: #F4CE14;
   font-family: 'Roboto';
   position: absolute;
-  top: 10%;
+  top: 21vh;
 }
 .subheading{
   padding-left: 7.5%;
   color: white;
   font-family: "Markazi Text";
   position: absolute;
-  top:14%;
+  top:25vh;
 }
 .description{
   padding-left: 7.5%;
@@ -72,21 +93,21 @@ li{
   color: white;
   font-family: "Markazi Text";
   position: absolute;
-  top:19%;
+  top:29vh;
 }
 .bannerImage{
-  width: 300px;
-  height: 270px;
+  width: 50vh;
+  height: 35vh;
   width: fit-content;
   position:absolute;
-  right: 10%;
-  top: 10%;
+  right: 29%;
+  top: 24vh;
   border-radius: 10px;
 }
 .Reserve-btn{
   margin-left: 7.5%;
   position: absolute;
-  top:31%;
+  top:45vh;
   height: 55px;
   border-radius: 5px;
   background-color: #F4CE14;
@@ -112,10 +133,16 @@ li{
   font-family: 'karla';
   font-size: 30px;
 }
+.menu{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2,600px);
+}
 .menu-btn{
   margin-top: 2%;
-  margin-left: 45%;
+  margin-left: 50%;
   height: 55px;
+  width: fit-content;
   border-radius: 5px;
   background-color: #F4CE14;
   font-family: 'Roboto';
@@ -235,15 +262,16 @@ li{
   margin-top: 1%;
   margin-left: 20%;
   width: fit-content;
+  border: 1px solid black;
   height: 44px;
   border-radius: 22px;
-  background-color: rgba(73, 58, 173);
+  background-color: rgb(178, 168, 245);
   font-family: 'Roboto';
   color:rgb(255, 255, 255);
   font-weight: bold;
-  border-color: none;
+  
 }
-.input{
+.input{                         
   width: 250px;
   height: 40px;
   border-radius: 10px;
@@ -272,54 +300,67 @@ li{
 .msg h1,h2{
 padding: 5px;
 }
+.aboutus{
+  background-color: #cececb;
+}
+.about{
+  text-align: center;
+  font-family: "Markazi Text";
+  padding: 100px;
+  font-size: large;
+}
 @media screen and (max-width: 600px ) {
   .logo{
  
-    height: 30px;
-    width: 100px;
+    height: 60px;
+    width: 150px;
     
   }
+  .about{
+    padding: 70px;
+
+  }
+.nav{
+  
+  width: 355px;
+  overflow: scroll;
+}
   .banner{
-    height: 20vh;
-    width:90% ;
+    display: flex;
+    height: 25vh;
+    width: 90%;
     padding: 5%;
   }
-  .nav{
-    width: 320px ;
-    display:inline-flex;
-   overflow: scroll;
-  }
-  li{
-    padding: 5px;
-    font-weight: bolder;
-    font-size: small;
-   }
    .heading{
     font-size: small;
+    top:24vh;
    }
    .subheading{
     font-size: small;
     position: absolute;
-    top:12%;
+    top:26vh;
    }
    .description{
     font-size: small;
-    width: 40%;
+    width: 39%;
     color: white;
     font-family: "Markazi Text";
     position: absolute;
-    top:14%;
+    top:28vh;
   }
   .bannerImage{
     width: fit-content;
     height: 20vh;
     width: fit-content;
     position: absolute;
-    top: 10%;
+    right: 17%;
+    top: 24vh;
+    padding: auto;
   }
   .Reserve-btn{
-    top:27vh;
+    top:41vh;
     height: 25px;
+    
   }
   
   .heading2{

@@ -86,14 +86,14 @@ const handleSubmit=()=>{
 
   return (
    
-    <div className='form-component'>
+    <section className='form-component'>
       <form className='form' />
       <div className='form-container'>
-   <label className='label' htmlFor="res-date">Choose date</label>
+   <label className='label' htmlFor="res-date" aria-label="Choose Date here">Choose date</label>
    <input className='input' type="date" id="res-date" value={date} onChange={handleDate} min={today()} onBlur={handleBlur1} />
    {error1 ?<p className='error'>ERROR :</p>:<p></p>}
    {error1 ?<p className='error'>{error1}</p>:<p></p>}
-   <label className='label' htmlFor="res-time">Choose time</label>
+   <label className='label' htmlFor="res-time" aria-label="Choose Time here">Choose time</label>
    <select className='input' id="res-time" value={time} onChange={handleTime} onBlur={handleBlur2}>
     <option key="select"></option>
      {
@@ -125,7 +125,7 @@ const handleSubmit=()=>{
    value="Make Your reservation" 
    disabled={handleSubmit()} />
     
-</div>
+</section>
 
   )
 }

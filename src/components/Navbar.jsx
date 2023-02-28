@@ -5,29 +5,56 @@ import {Link,Route,Routes}  from 'react-router-dom';
 import HomePage from './HomePage';
 import BookingPage from './BookingPage';
 import ConfirmedBooking from './ConfirmedBooking';
+import { useRef} from 'react';
+import { useState } from 'react';
+
 const Navbar = () => {
+  const clickRef=useRef("")
+  const [click,setClick]=useState("")
+  const Home=()=>{
+       clickRef.current="Home";
+       setClick(clickRef.current);
+  }
+  const about=()=>{
+    clickRef.current="About"
+    setClick(clickRef.current);
+}
+const Menu=()=>{
+  clickRef.current="Menu" 
+  setClick(clickRef.current);
+}
+const Reservation=()=>{
+  clickRef.current="Reservation"
+  setClick(clickRef.current);
+}
+
+const Login=()=>{
+  clickRef.current="Login"
+  setClick(clickRef.current);
+}
   return (
     <div>
+      <header>
+      <img className='logo' src={logo} alt="logo" />
+      </header>
       <nav className='nav'>
-    <img className='logo' src={logo} alt="logo" />
+    
     <ul>
       <li>
-        <Link className='Link' to='/'>Home</Link>
+        <Link className={click==="Home"?'click':'Link'} onClick={Home} to='/'><i className="fa fa-home" style={{"font-size":"24px"}}></i> Home</Link>
       </li>
       <li>
-        <Link className='Link' to="/about">About</Link>
+        <Link  className={click==="About"?'click':'Link'} onClick={about} to="/about"><i class="fa fa-info-circle" style={{"font-size":"24px"}}></i> About</Link>
       </li>
       <li>
-      <Link className='Link' to="/menu">Menu</Link>
+      <Link className={click==="Menu"?'click':'Link'} onClick={Menu}  to="/menu"><i class='fas fa-hamburger' style={{'font-size':'24px'}}></i> Menu</Link>
       </li>
       <li>
-        <Link className='Link' to="/reservation">Reservation</Link>
+        <Link className={click==="Reservation"?'click':'Link'} onClick={Reservation} to="/reservation"><i class='fas fa-utensils' style={{'font-size':'24px'}}></i> Reservation</Link>
       </li>
+     
       <li>
-      <Link className='Link' to="/onlineorder">Online Order</Link>
-      </li>
-      <li>
-      <Link className='Link' to="/Login">Login</Link>
+      <Link className={click==="Login"?'click':'Link'} onClick={Login} to="/Login"><i class='fas fa-sign-in-alt' style={{"font-size":"24px"}}></i> Login</Link>
       </li>
     </ul>
     </nav>
