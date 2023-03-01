@@ -4,7 +4,9 @@ import About from './About';
 import {Link,Route,Routes}  from 'react-router-dom';
 import HomePage from './HomePage';
 import BookingPage from './BookingPage';
+import Menu from './Menu';
 import ConfirmedBooking from './ConfirmedBooking';
+import Login from './Login';
 import { useRef} from 'react';
 import { useState } from 'react';
 
@@ -19,7 +21,7 @@ const Navbar = () => {
     clickRef.current="About"
     setClick(clickRef.current);
 }
-const Menu=()=>{
+const menu=()=>{
   clickRef.current="Menu" 
   setClick(clickRef.current);
 }
@@ -28,13 +30,13 @@ const Reservation=()=>{
   setClick(clickRef.current);
 }
 
-const Login=()=>{
+const login=()=>{
   clickRef.current="Login"
   setClick(clickRef.current);
 }
   return (
-    <div>
-      <header>
+    <div className='body'>
+      <header className='header'>
       <img className='logo' src={logo} alt="logo" />
       </header>
       <nav className='nav'>
@@ -47,22 +49,24 @@ const Login=()=>{
         <Link  className={click==="About"?'click':'Link'} onClick={about} to="/about"><i class="fa fa-info-circle" style={{"font-size":"24px"}}></i> About</Link>
       </li>
       <li>
-      <Link className={click==="Menu"?'click':'Link'} onClick={Menu}  to="/menu"><i class='fas fa-hamburger' style={{'font-size':'24px'}}></i> Menu</Link>
+      <Link className={click==="Menu"?'click':'Link'} onClick={menu}  to="/menu"><i class='fas fa-hamburger' style={{'font-size':'24px'}}></i> Menu</Link>
       </li>
       <li>
         <Link className={click==="Reservation"?'click':'Link'} onClick={Reservation} to="/reservation"><i class='fas fa-utensils' style={{'font-size':'24px'}}></i> Reservation</Link>
       </li>
      
       <li>
-      <Link className={click==="Login"?'click':'Link'} onClick={Login} to="/Login"><i class='fas fa-sign-in-alt' style={{"font-size":"24px"}}></i> Login</Link>
+      <Link className={click==="Login"?'click':'Link'} onClick={login} to="/Login"><i class='fas fa-sign-in-alt' style={{"font-size":"24px"}}></i> Login</Link>
       </li>
     </ul>
     </nav>
     <Routes>
         <Route path='/' element={<HomePage/>} />
         <Route path='about' element={<About/>} />
+        <Route path='/menu' element={<Menu/>}/>
         <Route path='reservation' element={<BookingPage/>}/>
         <Route path='confirmation/:date/:time/' element={<ConfirmedBooking />}/>
+        <Route path='/Login' element={<Login/>}/>
     </Routes>
     </div>
   )
