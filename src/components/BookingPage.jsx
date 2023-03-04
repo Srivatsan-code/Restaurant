@@ -3,6 +3,7 @@ import BookingForm from './BookingForm'
 import { useReducer,useState,useRef} from 'react';
 import { useNavigate} from "react-router-dom";
 import {fetchAPI,submitAPI} from './api'
+import { motion } from 'framer-motion';
 const BookingPage = () => {
   const [timeData,setTimeData]=useState([]);
   const [formData,setFormData]=useState({});
@@ -44,7 +45,11 @@ const BookingPage = () => {
   
   return (
 
-    <main className='background'>
+    <motion.main className='background'
+    initial={{opacity:0}}
+    animate={{opacity:1}}
+    exit={{opacity:0,transition:{duration:0.1}}}
+    >
       
     <section >
       
@@ -64,7 +69,7 @@ const BookingPage = () => {
   
     </section>
      
-     </main>
+     </motion.main>
   )
 }
 

@@ -1,11 +1,62 @@
 .home-background{
-  background-color: #cececb;
+ background-image: linear-gradient(to right,#cececb,rgb(154, 154, 182));
   border-radius: 10px;
   
 }
+.slider{
+  margin-left: 50%;
+  position: absolute;
+  top: 250px;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotate 30s linear infinite;
+}
+@keyframes rotate{
+  0%{
+    transform: perspective(900px) rotateY(0deg);
+  }
+  100%{
+    transform: perspective(900px) rotateY(360deg);
+  }
+}
+.slider span{
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i)*45deg)) translateZ(350px);
+}
+.banner-footer{
+  width: fit-content;
+}
+.banner-section1{
+  width: fit-content;
+}
+.slide-img{
+  width: 200px;
+  height: 200px;
+  transition: 2s;
+  
+  
+}
+.slider span:hover .slide-img{
+  transform: translateY(-50px) scale(1);
+}
+.slider p{
+  background-color: rgb(35, 0, 117,.9);
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  width: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+}
 .footer{
   
-  padding-top: 10px;
+  padding-top: 30px;
   background-color: #495E57;
   height: 200px;
   text-align: center;
@@ -19,12 +70,12 @@ span{
 }
 .logo
  {
-  height: 40px;
-  width: fit-content;
+  height: 50px;
+  width: 80px;
   
 }
 .nav{
-  background-color: #cececb;
+  background-color: #ffffff;
   border-radius: 10px;
   margin-bottom: 4px;
 }
@@ -45,22 +96,22 @@ li{
   
   font-family: 'Roboto';
   text-decoration: none;
-  color: #495E57;
+  color:#0B0968;
   transition: transform 1s;
 }
 .Link:hover{
   transform: scale(1.1);
   
-  background-color: #495E57;
-  color: white;
-  padding: 5px;
+  background-color: rgb(144, 141, 141,0.4);
+  color:#0B0968;
+  padding: 10px;
   border-radius: 20px;
 }
 .click{
   margin:auto;
   text-decoration: none;
-  background-color: #495E57;
-  color: white;
+  background-color: rgb(144, 141, 141,0.3);
+  color:#0B0968;
   padding: 10px;
   border-radius: 20px;
 }
@@ -69,59 +120,32 @@ li{
  
 }
 .banner{
-  display: grid;
-  border-radius: 10px;
-  background-color:#495E57;
-  height: 24vh;
+  background-image: linear-gradient(to right,#0D324D,rgb(51, 22, 109), #7F5A83);
+  height: 70vh;
   width: 90%;
   padding: 5%;
+  border-radius: 20px;
 }
 .heading{
   padding-left: 7.5%;
-  color: #F4CE14;
+  color: #ffffff;
   font-family: 'Roboto';
-  position: absolute;
-  top: 21vh;
+  font-size: xx-large;
+  width:fit-content;
 }
-.subheading{
-  padding-left: 7.5%;
-  color: white;
-  font-family: "Markazi Text";
-  position: absolute;
-  top:25vh;
-}
-.description{
-  margin-left: 7.5%;
-  padding-bottom: 5%;
-  font-size: large;
-  width: 30%;
-  height: 100px;
-  color: white;
-  font-family: "Markazi Text";
-  position: absolute;
-  top:29vh;
-}
-.bannerImage{
-  width: 50vh;
-  height: 35vh;
-  width: fit-content;
-  position:absolute;
-  right: 29%;
-  top: 24vh;
-  border-radius: 10px;
-}
+
 .Reserve-btn{
   margin-left: 7.5%;
-  position: absolute;
-  top:45vh;
   height: 55px;
-  border-radius: 5px;
-  background-color: #F4CE14;
+  width: 100px;
+  border-radius: 25px;
+  background-image: linear-gradient(to right,rgb(251, 0, 255),rgb(117, 30, 151));
   font-family: 'Roboto';
-  color:black;
+  color:rgb(244, 244, 244);
   font-weight: bold;
-  border-color: #495E57;
-  box-shadow: #F4CE14;
+  font-size: larger;
+  box-shadow: 5px 2px 13px rgb(0, 0, 0);
+  width: max-content;
 }
 .Reserve-btn:hover{
   padding: 10px;
@@ -137,7 +161,8 @@ li{
 .heading2{
   padding-left: 5%;
   font-family: 'karla';
-  font-size: 30px;
+  font-size: 40px;
+  color: #0B0968;
 }
 .menu-btn{
   margin-top: 2%;
@@ -166,12 +191,13 @@ li{
 
 .online-btn{
   padding: 5px;
+  margin-left: 25px;
   height: 55px;
-  width: 100%;
+  width: 200px;
   border-radius: 5px;
-  background-color: #14f48f;
+  background-image: linear-gradient(to right,rgb(251, 0, 255),rgb(117, 30, 151));
   font-family: 'Roboto';
-  color:black;
+  color:rgb(251, 249, 249);
   font-weight: bolder;
   border-color: #495E57;
   box-shadow: #F4CE14;
@@ -183,7 +209,7 @@ li{
   box-shadow: 3px 4px 13px #cececb;
 }
 .card{
-  margin: 5px;
+  margin: 16px;
   position: relative;
   margin-left: 7%;
   width: 264px;
@@ -244,7 +270,7 @@ li{
 }
 .background{
   height:150%;
-  background-image: url("https://c0.wallpaperflare.com/preview/565/228/846/japanese-japan-restaurant-culture.jpg");
+  background-image: url("./components/assets/table.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -255,7 +281,8 @@ li{
   grid-template-columns: repeat(2,200px);
   margin-bottom: 1%;
   width: 500px;
-  background-color: rgba(93, 98, 240, 0.9);
+  color: white;
+  background-image: linear-gradient(to right,#0D324D,rgba(93, 98, 240, 0.9));
   
 }
 .label{
@@ -300,7 +327,7 @@ li{
   border: 1px solid black;
   height: 44px;
   border-radius: 22px;
-  background-color: rgb(178, 168, 245);
+  background-color: rgb(118, 99, 240);
   font-family: 'Roboto';
   color:rgb(255, 255, 255);
   font-weight: bold;
@@ -347,21 +374,32 @@ li{
 padding: 5px;
 }
 .aboutus{
-  background-color: #cececb;
+  background-image: linear-gradient(to right,#0D324D,rgb(51, 22, 109), #7F5A83);
+  border-radius: 20px;
 }
 .about{
   text-align: center;
   font-family: "Markazi Text";
   padding: 100px;
   font-size: large;
+  color: white;
 }
 .about h2{
-  color:#333333
+  color:#ffffff
 }
+.blogImage{
+  width: 500px;
+  height: 300px;
+  display: flex;
+  margin-left: 400px;
+  padding: 20px;
+  box-shadow: 15px 15px 30px rgb(70, 82, 133);
+}
+
 .menu-container{
   display: flex;
   flex-wrap: wrap;
-  background-color: #cececb;
+  background-image: linear-gradient(to right,#0D324D,rgb(51, 22, 109), #7F5A83);
   border-radius: 10px;
 
 }
@@ -370,39 +408,50 @@ margin: 1%;
   text-align: center;
   display: grid;
   grid-gap: 10px;
-grid-template-columns: repeat(1,200px);
+grid-template-columns: 1fr 1fr;
 width: 500px;
 
 }
 .login{
-  background-color: #cececb;
+  background-image:linear-gradient(to right,#0D324D,rgb(51, 22, 109), #7F5A83); ;
   border-radius: 10px;
   padding: 20px;
+  height: 80vh;
+}
+.login-btn{
+  font-weight: bolder;
+  font-family: "Markazi Text";
+  font-size: larger;
+  color: white;
+  background-image: linear-gradient(to right,rgb(251, 0, 255),rgb(117, 30, 151));
+  height: 55px;
+  border-radius: 25px;
+  margin-left: 250px;
+  width: 90px;
 }
 @media screen and (max-width: 600px ) {
-  .body{
-    margin: 0%;
-    padding: 0%;
-  }
+
   .login{
     margin-top: 10px;
     margin-bottom: 10px;
-  width: 71%;
+  width: 350px;
   height:600px;
   }
  .home-background{
-  width: 79%;
+  width: 350px;
+  
  }
  .banner{
-  display: flex;
-  height: 30vh;
+
+  height:90vh;
   width: 100%;
   padding: 0%;
+  
 }
   .logo{
  
     height: 60px;
-    width: 150px;
+    width: 100px;
     
   }
   .about{
@@ -410,8 +459,8 @@ width: 500px;
 
   }
 .nav{
-  margin-block-end: 0%;
-  width:79% ;
+  width:350px ;
+  margin: 0px 0px 0px;
   overflow: scroll;
   height: 55px;
   
@@ -428,45 +477,60 @@ li{
   flex-wrap: wrap;
   
 }
+.banner-section1{
+  padding-left: 60px;
+  padding-top: 20px;
+   
+}
+.slider{
+  margin-left: 155px;
+  position: absolute;
+  top: 460px;
+  width: min-content;
+  
+}
+.slider span{
+  transform-origin:center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i)*45deg)) translateZ(200px);
+}
+.slide-img{
+  width: 120px;
+  height: 100px;
+}
+.slider p{
+  background-color: rgb(35, 0, 117,.9);
+  font-size: 10px;
+  width: 120px;
 
+}
    .heading{
-    font-size: small;
-    top:24vh;
+    font-size:30px;
    }
-   .subheading{
-    font-size: small;
-    position: absolute;
-    top:26vh;
-   }
-   .description{
-    font-size: small;
-    width: 42%;
-    color: white;
-    font-family: "Markazi Text";
-    position: absolute;
-    top:28vh;
-  }
-  .bannerImage{
-    width: fit-content;
-    height: 20vh;
-    width: fit-content;
-    position: absolute;
-    right: 17%;
-    top: 24vh;
-    padding: auto;
-  }
+ 
   .Reserve-btn{
-    top:40%;
-    height: 25px;
-    
+    width: max-content;
+    height: 40px;
+    margin-left: 20px;
+    border-color: rgb(251, 148, 244);
+    border-radius: 10px;
   }
   
   .heading2{
-    font-size: 15px;
+    font-size: 25px;
+    font-weight: bolder;
   }
   .menu-btn{
     margin-left: 9%;
     height: 25px;
+  }
+  .blogImage{
+    width: 200px;
+    height: 100px;
+   margin: 0px;
+   padding: 10px;
+   text-align: left;
+    box-shadow: 5px 5px 13px rgb(70, 82, 133);
   }
   .label{
     font-size: 20px;
@@ -488,16 +552,16 @@ li{
     margin:auto;
   }
   .footer{
-    width: 79%;
+    width: 100%;
   }
   .aboutus{
-  width:79%;
+  width:350px;
   }
   .endPage{
-    width: 79%;
+    width: 350px;
   }
   .menu-container{
-    width: 79%;
+    width: 350px;
   }
   .form-menu-container{
     text-align: center;
@@ -505,7 +569,10 @@ li{
     display: grid;
     grid-gap: 10px;
   grid-template-columns: repeat(1,200px);
-  width: 79%;
+  width: 350px;
  
+  }
+  .login-btn{
+ margin: 0%;
   }
 }

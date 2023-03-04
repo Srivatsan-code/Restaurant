@@ -1,13 +1,20 @@
 import React from 'react'
-
+import {motion} from "framer-motion"
+import restaurant from "./assets/restaurant.jpg"
 const About = () => {
   return (
-    <section className='aboutus'>
+    <motion.section className='aboutus'
+    initial={{opacity:0}}
+    animate={{opacity:1}}
+    exit={{opacity:0,transition:{duration:0.1}}}
+    >
       <article>
         <p className='about'>
-          <h2>Little Lemon </h2>
-          Since our modest beginnings in 2005 with a little space in Chicago’s stylish Yorkville locale, ‘Little Lemon’ ‘s development has been enlivened with the energy to cook and serve solid, Indian-roused takeout food.
-          In contrast to other Indian eateries, ‘Little Lemon’ was made with the explicit expectation to appear as something else.
+        <h2>ABOUT US</h2>
+          <h2>Food Kingdom</h2>
+          <img src={restaurant} className="blogImage" alt="restaurantImage"/>
+          Since our modest beginnings in 2005 with a little space in Chicago’s stylish Yorkville locale, ‘Food Kingdom’ ‘s development has been enlivened with the energy to cook and serve solid, Indian-roused takeout food.
+          In contrast to other Indian eateries, ‘Food Kingdom’ was made with the explicit expectation to appear as something else.
           We realize numerous individuals love Indian sustenance, yet a large number of them loathe or are unconscious of the regularly unfortunate fixings that make run-of-the-mill Indian nourishment taste so great.
           Our menu highlights things that utilize the sound and fragrant flavors, however, forget the stuffing ghee, spread, oil, and overwhelming cream.
           ‘Organization Name’ has developed to incorporate four superb takeout areas in Toronto, with additional to come sooner rather than later. Our group takes pride in the way that we can furnish our new and faithful clients with extraordinary tasting Indian-roused nourishment that is not normal for that some other Indian eateries you visit.
@@ -22,7 +29,7 @@ const About = () => {
          </p>
         </p>
       </article>
-    </section>
+    </motion.section>
   )
 }
 

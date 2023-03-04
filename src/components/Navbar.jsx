@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './logo.svg';
+import logo from './assets/logo.png';
 import About from './About';
 import {Link,Route,Routes}  from 'react-router-dom';
 import HomePage from './HomePage';
@@ -9,7 +9,7 @@ import ConfirmedBooking from './ConfirmedBooking';
 import Login from './Login';
 import { useRef} from 'react';
 import { useState } from 'react';
-
+import {AnimatePresence} from 'framer-motion'
 const Navbar = () => {
   const clickRef=useRef("")
   const [click,setClick]=useState("")
@@ -60,7 +60,9 @@ const login=()=>{
       </li>
     </ul>
     </nav>
+    <AnimatePresence>
     <Routes>
+      
         <Route path='/' element={<HomePage/>} />
         <Route path='about' element={<About/>} />
         <Route path='/menu' element={<Menu/>}/>
@@ -68,6 +70,7 @@ const login=()=>{
         <Route path='confirmation/:date/:time/' element={<ConfirmedBooking />}/>
         <Route path='/Login' element={<Login/>}/>
     </Routes>
+    </AnimatePresence>
     </div>
   )
 }

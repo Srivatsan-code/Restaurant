@@ -35,8 +35,15 @@ const BookingForm = (props) => {
     else{
       mon=arr[0]
     }
-    var day=`${arr[2]}-${mon}-${arr[1]}`
+    if(arr[1].length===1){
+      var date=`0${arr[1]}`
+    }
+    else{
+      date=arr[1]
+    }
+    var day=`${arr[2]}-${mon}-${date}`
     day=day.toString();
+    console.log(day)
     return day;
   }
 const handleBlur1=(e)=>{
@@ -89,11 +96,11 @@ const handleSubmit=()=>{
     <section className='form-component'>
       <form className='form' />
       <div className='form-container'>
-   <label className='label' htmlFor="res-date" aria-label="Choose Date here">Choose date</label>
-   <input className='input' type="date" id="res-date" value={date} onChange={handleDate} min={today()} onBlur={handleBlur1} />
+   <label className='label' htmlFor="res-date" aria-label="Choose Date here">Choose date  <i class='fas fa-calendar-alt' style={{'font-size':'24px'}}></i></label>
+   <input className='input' type="date" id="res-date" value={date} onChange={handleDate} min={`${today()}`} onBlur={handleBlur1} />
    {error1 ?<p className='error'>ERROR :</p>:<p></p>}
    {error1 ?<p className='error'>{error1}</p>:<p></p>}
-   <label className='label' htmlFor="res-time" aria-label="Choose Time here">Choose time</label>
+   <label className='label' htmlFor="res-time" aria-label="Choose Time here">Choose time  <i class='fas fa-clock' style={{'font-size':'24px'}}></i></label>
    <select className='input' id="res-time" value={time} onChange={handleTime} onBlur={handleBlur2}>
     <option key="select"></option>
      {
@@ -105,11 +112,11 @@ const handleSubmit=()=>{
    </select>
    {error2 ?<p className='error'>ERROR :</p>:<p></p>}
    {error2 ?<p className='error'>{error2}</p>:<p></p>}
-   <label className='label' htmlFor="guests">Number of guests</label>
+   <label className='label' htmlFor="guests">Number of guests <i class='fas fa-child' style={{'font-size':'24px'}}></i></label>
    <input className='input' type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onBlur={handleBlur3} onChange={e=>setGuests(e.target.value)}/>
    {error3 ?<p className='error'>ERROR :</p>:<p></p>}
    {error3 ?<p className='error'>{error3}</p>:<p></p>}
-   <label className='label' htmlFor="occasion">Occasion</label>
+   <label className='label' htmlFor="occasion">Occasion <i class="fa fa-birthday-cake" style={{"font-size":"24px"}}></i></label>
    <select className='input' id="occasion" value={occasion} onChange={e=>setOccation(e.target.value)} onBlur={handleBlur4}>
    <option key="select"></option>
       <option key="Birthday">Birthday</option>

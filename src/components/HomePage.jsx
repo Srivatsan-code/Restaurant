@@ -1,25 +1,48 @@
 import React from 'react'
-import banner from './assets/restauranfood.jpg';
 import card1 from './assets/greek salad.jpg';
 import card3 from "./assets/lemon dessert.jpg";
 import { useNavigate} from "react-router-dom";
+import burger from "./slides/burger.jpg"
+import cake from "./slides/cake.jpg"
+import cupcake from "./slides/cupcake.jpg"
+import icecream from "./slides/ice-cream.jpg"
+import pizza from "./slides/pizza.jpg"
+import strawberry from "./slides/strawberry-dessert.jpg"
+import fruit from "./slides/fruit-juice.jpg"
+import {motion, LazyMotion, domAnimation, m } from "framer-motion"
 const HomePage = () => {
   const navigate=useNavigate();
   const handle=()=>{
     navigate('/reservation')
   }
   return (
-    <div className='home-background'>
-      <section>
+    <LazyMotion features={domAnimation}>
+    <motion.div className='home-background'
+    initial={{opacity:0}}
+    animate={{opacity:1}}
+    exit={{opacity:0,transition:{duration:0.1}}}
+    >
+      <section className='home-section'>
           <article className='banner'>
-          <h2 className='heading'>Little Lemon</h2>
-          <img className='bannerImage' src={banner} alt="banner"/>
-          <h3 className='subheading'>Chicago</h3>
-        
-          <p className='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-         <footer className='banner-footer'>
-          <button className='Reserve-btn' onClick={handle}>Reserve a Table</button>
-          </footer>
+            <section className='banner-section1'>
+                <h2 className='heading'>Let's Start</h2>
+                <h2 className='heading'>Reserve Your Table</h2>
+              <footer className='banner-footer'>
+                <motion.button whileHover={{ scale: 1.2 }} 
+               
+                className='Reserve-btn' onClick={handle}>ReserveTable</motion.button>
+                </footer>
+                
+          </section>
+          <section className='slider'>
+                 <span style={{"--i":"1"}}> <img className='slide-img' src={pizza} alt="pizza" /><p>"Hot Italian pizza 30% offer 🍕"</p></span>
+                 <span style={{"--i":"2"}}> <img className='slide-img' src={icecream} alt="icecream" /><p>"Treat yourself with our delicious Icecream 🍦" </p></span>
+                 <span style={{"--i":"3"}}> <img className='slide-img' src={cupcake} alt="cupcake" /><p>"Yummy CupCake Make your Day 😍"</p></span>
+                 <span style={{"--i":"4"}}> <img className='slide-img' src={cake} alt="cake" /><p>"Celebrate Your BirthDay With Chocolate Cake 🎂🎉"</p></span>
+                 <span style={{"--i":"5"}}> <img className='slide-img' src={burger} alt="burger" /><p>"Build Your Day🍔😎"</p></span>
+                 <span style={{"--i":"6"}}> <img className='slide-img' src={strawberry} alt="strawberry" /><p>"Strawberry Icecream 🍓"</p></span>
+                 <span style={{"--i":"7"}}> <img className='slide-img' src={fruit} alt="strawberry" /><p>"Healthy Fresh Juice 💪"</p></span>
+                </section>
           </article>
         </section>
         <h3 className='heading2'>This week Specials !!!</h3> 
@@ -46,7 +69,8 @@ const HomePage = () => {
           
            </div>
         </section>
-    </div>
+    </motion.div>
+    </LazyMotion>
   )
 }
 
